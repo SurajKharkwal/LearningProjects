@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Orbitron', sans-serif;
+overflow-x: hidden;
+}
+body {
+    background-color: #181A1B;
+}
+
+html, body, #root {
+height: 100%;
+width: 100%;
+}
+
+div.Surface {
+    width: 100vw;
+    height: 100vh;  
+}
+
+

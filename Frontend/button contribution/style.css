@@ -1,0 +1,48 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+html, body {
+height: 100%;
+width: 100%;
+}
+
+div.surface {
+    width: 100vw;
+    height: 100vh;
+    background-color: #0e1630;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button{
+    width: 16vw;
+    height: 6vh;
+    font-size: large;
+    font-weight: 500;
+    padding: 8px 22px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    border: 3px solid transparent;
+    border-image: linear-gradient(to right, rgb(0, 162, 255), purple) ;
+    border-image-slice: 1;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+span {
+    height: 6vh;
+    width: 0vw;
+    position: absolute;
+    background-image: linear-gradient(to right, rgb(0, 162, 255), purple) ;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.5s;
+}
+button:hover span {
+    width: 16vw;
+}

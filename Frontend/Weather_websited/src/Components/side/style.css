@@ -1,0 +1,11 @@
+div#sidetab {
+    background-image: linear-gradient(to right, black ,rgba(64, 64, 0, 0.5),rgba(0, 0, 0, 0.2) , rgba(0, 0, 0, 0));
+
+}
+span.show  {
+    display: none;
+}
+div.sidebar:hover span {
+    display: inline;
+    width: 100%;
+}

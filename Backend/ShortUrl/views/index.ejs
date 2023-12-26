@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial;
+    }
+    
+    html, body {
+    height: 100%;
+    width: 100%;
+    }
+    
+  .wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    z-index: -1;
+}
+
+.wave svg {
+    position: relative;
+    display: block;
+    width: 180vw;
+    height: 540px;
+    transform-origin: 60vw;
+    transform: rotateY(180deg);
+
+}
+
+.wave .shape-fill {
+    fill: #92DCE5;
+}
+.rapper {
+    width: 100vw;
+    height: 100vh;
+}
+nav{
+    background-color: #92DCE5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    font-size: 2vw;
+    
+}
+img {
+    position: absolute;
+    width: 35vw;
+    right: 12%;
+    top: 10%;
+}
+.form {
+    padding: 1vw;
+    margin-left: 3vw;
+    
+}
+form>* {
+    padding: 0.5vw;
+    font-size: larger;
+    border-radius: 0.5vw;
+}
+form>button{
+    background-color: rgb(69, 69, 224);
+    color: white;
+
+}
+p {
+    text-align: center;
+    width: 35%;
+
+}
+.dis>h1 {
+    text-align: center;
+    width: 30%;
+    font-size: 3vw;
+
+}
+.dis {
+    margin-top: 5%;
+    padding: 2vw;
+    font-size: 1.5vw;
+    color: rgb(95, 97, 100);
+}
+.data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5vw;
+    font-size: 2vw;
+    padding: 2vw;
+}
+</style>
+<body>
+  <div class="rapper">
+        <img src="pro.png"  alt="img">
+        <nav class="nav"><h1>Url Shortner</h1></nav>
+        <form class="form" action="/urlLink" method="post">
+            <label for="fullUrl">Url : </label>
+            <input type="utl" placeholder="httpp://url.com" name="fullUrl" id="fullUrl">
+            <button type="submit">Shrink</button>
+        </form>
+        <div class="wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+            </svg>
+        </div>
+        <div class="dis">
+            <h1 class="">Disccription</h1><br> 
+            <p>
+                "A basic platform that shortens provided URLs, restricting access to these links solely from within the website's domain."z
+            </p>
+        </div>
+        <div class="data">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Full Url</th>
+                        <th>Short Url</th>
+                        <th>Clicks</th>
+                    </tr>
+                </thead>
+                <tbody class="tb">
+                    <% urlData.forEach(data => { %>
+                        <tr>
+                          <td ><a href="<%= data.full %>"><%= data.full %></a></td>
+                          <td><a href="<%= data.short %>"><%= data.short %></a></td>
+                          <td style="text-align: center; padding-left: 2vw;"> <%= data.click%> </td>
+                        </tr>
+                      <% }) %>
+                </tbody>
+            </table>
+        </div>
+  </div>
+</body>
+</html>
